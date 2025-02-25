@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+#define ROW 3
+#define COL 3
+
+int main() {
+    int i, j;
+    int mat[ROW][COL];
+
+    printf("Enter elements of matrix:\n");
+    for (i = 0; i < ROW; i++) {
+        for (j = 0; j < COL; j++) {
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    // Check if matrix is upper triangular
+    for (i = 1; i < ROW; i++) {
+        for (j = 0; j < i; j++) {
+            if (mat[i][j] != 0) {
+                printf("Matrix is not upper triangular\n");
+                return 0;
+            }
+        }
+    }
+
+    printf("Matrix is upper triangular\n");
+
+    return 0;
+}

@@ -1,0 +1,30 @@
+char* mergeAlternately(char* word1, char* word2) {
+    int len1 = strlen(word1);
+    int len2 = strlen(word2);
+    int totalLength = len1 + len2;
+    
+    // Allocate memory for the resulting string
+    char* result = (char*)malloc((totalLength + 1) * sizeof(char));
+    
+    int i = 0, j = 0, k = 0;
+    // Merge the strings alternately
+    while (i < len1 && j < len2) {
+        result[k++] = word1[i++];
+        result[k++] = word2[j++];
+    }
+    
+    // Append the remaining characters from word1
+    while (i < len1) {
+        result[k++] = word1[i++];
+    }
+    
+    // Append the remaining characters from word2
+    while (j < len2) {
+        result[k++] = word2[j++];
+    }
+    
+    // Null-terminate the resulting string
+    result[k] = '\0';
+    
+    return result;
+}

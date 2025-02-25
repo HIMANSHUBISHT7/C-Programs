@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+#define ROW 3
+#define COL 3
+
+int main() {
+    int i, j;
+    int mat[ROW][COL], transpose[COL][ROW];
+
+    printf("Enter elements of matrix:\n");
+    for (i = 0; i < ROW; i++) {
+        for (j = 0; j < COL; j++) {
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    // Compute transpose
+    for (i = 0; i < ROW; i++) {
+        for (j = 0; j < COL; j++) {
+            transpose[j][i] = mat[i][j];
+        }
+    }
+
+    printf("Original matrix:\n");
+    for (i = 0; i < ROW; i++) {
+        for (j = 0; j < COL; j++) {
+            printf("%d ", mat[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("Transpose of matrix:\n");
+    for (i = 0; i < COL; i++) {
+        for (j = 0; j < ROW; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
